@@ -1,4 +1,5 @@
 module.exports = {
+  verbose: true,
   preset: 'ts-jest',
   setupFilesAfterEnv: ['./scripts/setupJestEnv.ts'],
   globals: {

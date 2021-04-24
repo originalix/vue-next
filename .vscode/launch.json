@@ -10,7 +10,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "stopOnEntry": false,
-      "args": ["${fileBasename}", "--runInBand", "--detectOpenHandles"],
+      "args": ["-t lix", "${fileBasename}", "--runInBand", "--detectOpenHandles"],
       "cwd": "${workspaceFolder}",
       "preLaunchTask": null,
       "runtimeExecutable": null,
