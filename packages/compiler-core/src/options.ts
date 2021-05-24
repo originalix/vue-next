@@ -253,7 +253,7 @@ export interface CodegenOptions extends SharedTransformCodegenOptions {
    * Option to optimize helper import bindings via variable assignment
    * (only used for webpack code-split)
    * @default false
-   */
+   *
   optimizeImports?: boolean
   /**
    * Customize where to import runtime helpers from.

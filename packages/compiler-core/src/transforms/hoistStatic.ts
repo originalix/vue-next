@@ -20,6 +20,7 @@ export function hoistStatic(root: RootNode, context: TransformContext) {
   walk(
     root,
     context,
+    // TODO: fall through
     // Root node is unfortunately non-hoistable due to potential parent
     // fallthrough attributes.
     isSingleElementRoot(root, root.children[0])
@@ -98,6 +99,7 @@ function walk(
       }
     } else if (child.type === NodeTypes.TEXT_CALL) {
       const contentType = getConstantType(child.content, context)
+      // TODO: Lix-是否可以常量代替
       if (contentType > 0) {
         if (contentType < ConstantTypes.CAN_STRINGIFY) {
           canStringify = false

@@ -69,25 +69,25 @@ describe('compiler: codegen', () => {
     expect(code).toMatchSnapshot()
   })
 
-  test('module mode preamble w/ optimizeImports: true', () => {
-    const root = createRoot({
-      helpers: [CREATE_VNODE, RESOLVE_DIRECTIVE]
-    })
-    const { code } = generate(root, { mode: 'module', optimizeImports: true })
-    expect(code).toMatch(
-      `import { ${helperNameMap[CREATE_VNODE]}, ${
-        helperNameMap[RESOLVE_DIRECTIVE]
-      } } from "vue"`
-    )
-    expect(code).toMatch(
-      `const _${helperNameMap[CREATE_VNODE]} = ${
-        helperNameMap[CREATE_VNODE]
-      }, _${helperNameMap[RESOLVE_DIRECTIVE]} = ${
-        helperNameMap[RESOLVE_DIRECTIVE]
-      }`
-    )
-    expect(code).toMatchSnapshot()
-  })
+  // test('module mode preamble w/ optimizeImports: true', () => {
+  //   const root = createRoot({
+  //     helpers: [CREATE_VNODE, RESOLVE_DIRECTIVE]
+  //   })
+  //   const { code } = generate(root, { mode: 'module', optimizeImports: true })
+  //   expect(code).toMatch(
+  //     `import { ${helperNameMap[CREATE_VNODE]}, ${
+  //       helperNameMap[RESOLVE_DIRECTIVE]
+  //     } } from "vue"`
+  //   )
+  //   expect(code).toMatch(
+  //     `const _${helperNameMap[CREATE_VNODE]} = ${
+  //       helperNameMap[CREATE_VNODE]
+  //     }, _${helperNameMap[RESOLVE_DIRECTIVE]} = ${
+  //       helperNameMap[RESOLVE_DIRECTIVE]
+  //     }`
+  //   )
+  //   expect(code).toMatchSnapshot()
+  // })
 
   test('function mode preamble', () => {
     const root = createRoot({
@@ -164,7 +164,7 @@ describe('compiler: codegen', () => {
     expect(code).toMatchSnapshot()
   })
 
-  test('hoists', () => {
+  test('hoists lix', () => {
     const root = createRoot({
       hoists: [
         createSimpleExpression(`hello`, false, locStub),
